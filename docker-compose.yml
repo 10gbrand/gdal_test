@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+  geoparquet-converter:
+    build: .
+    volumes:
+      - /Users/mattiastengbrand/Library/Mobile Documents/com~apple~CloudDocs/Spring/uppland 2/files:/data
+    restart: "no"
