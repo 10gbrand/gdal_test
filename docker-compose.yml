@@ -1,7 +1,59 @@
 version: "3.8"
 services:
   geoparquet-converter:
-    build: .
+    build:
+      context: .
+      dockerfile: gdal/Dockerfile
     volumes:
       - /Users/mattiastengbrand/Library/Mobile Documents/com~apple~CloudDocs/Spring/uppland 2/files:/data
+      - geoparquet-data:/data/output
     restart: "no"
+
+  duckdb:
+    build:
+      context: .
+      dockerfile: duckdb/Dockerfile
+    volumes:
+      - geoparquet-data:/data/output
+    working_dir: /app
+    restart: "no"
+
+  dbt:
+    build:
+      context: .
+      dockerfile: dbt/Dockerfile
+    volumes:
+      - geoparquet-data:/data/output
+    depends_on:
+      - duckdb
+      - geoparquet-converter
+    working_dir: /app
+    restart: "no"
+
+  duckdb-shell:
+    build:
+      context: .
+      dockerfile: duckdb/Dockerfile
+    volumes:
+      - geoparquet-data:/data/output
+    stdin_open: true
+    tty: true
+    command: /bin/bash
+    working_dir: /app
+    restart: "no"
+
+  dbt-shell:
+    build:
+      context: .
+      dockerfile: dbt/Dockerfile
+    volumes:
+      - geoparquet-data:/data/output
+    stdin_open: true
+    tty: true
+    command: /bin/bash
+    working_dir: /app
+    restart: "no"
+
+volumes:
+  geoparquet-data:
+

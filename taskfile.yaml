@@ -1,0 +1,40 @@
+version: "3"
+
+vars:
+  MOUNT_PATH: "/Users/mattiastengbrand/Library/Mobile Documents/com~apple~CloudDocs/Spring/uppland 2/files"
+
+tasks:
+  init:
+    desc: "Initiera Devbox-projektet"
+    cmds:
+      - echo "🔧 Initierar Devbox..."
+      - devbox init
+
+  shell:
+    desc: "Starta Devbox-shell med standardinställningar"
+    cmds:
+      - echo "🚀 Startar Devbox shell..."
+      - devbox shell
+
+  verify:
+    desc: "Verifiera Python, uv, DuckDB, DBT och GDAL"
+    cmds:
+      - echo "🔍 Verifierar installationer..."
+      - python --version
+      - uv --version
+      - duckdb --version
+      - dbt --version
+      - gdalinfo --version
+
+  shell:mount:
+    desc: "Starta Devbox-shell med /data mountad från iCloud"
+    cmds:
+      - echo "🗂  Startar Devbox med mount till {{.MOUNT_PATH}}"
+      - devbox shell --mount "{{.MOUNT_PATH}}:/data"
+
+  setup:
+    desc: "Kör hela initieringsflödet: init + shell + verify"
+    cmds:
+      - task: init
+      - task: shell
+      - task: verify

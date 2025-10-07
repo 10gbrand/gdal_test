@@ -1,0 +1,32 @@
+{
+  "packages": [
+    "python@3.13",
+    "uv",
+    "gdal",
+    "duckdb",
+    "git",
+    "gnumake"
+  ],
+  "shell": {
+    "init_hook": [
+      "echo '🚀 Initializing Python environment via uv and pyproject.toml...'",
+      "if [ ! -d .venv ]; then uv venv .venv --python 3.13; fi",
+      "source .venv/bin/activate",
+      "uv sync --dev"
+    ],
+    "env": {
+      "PYTHONPATH": ".",
+      "UV_PIP_RESOLVER": "modern"
+    }
+  },
+  "devbox": {
+    "version": "1.0",
+    "features": {
+      "auto_venv": true,
+      "python": {
+        "use_uv": true
+      }
+    }
+  },
+  "description": "Jetify Devbox + uv environment for data pipelines (DuckDB, DLT, Streamlit, FastAPI, dev tools)"
+}

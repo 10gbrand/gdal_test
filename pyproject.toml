@@ -1,0 +1,58 @@
+[project]
+name = "dlt_pipeline"
+version = "0.1.0"
+description = "Data pipeline using DuckDB, DLT, Streamlit, and FastAPI"
+authors = [{ name = "Mattias Tengbrand" }]
+readme = "README.md"
+requires-python = ">=3.13"
+
+# Produktionsberoenden
+dependencies = [
+    "duckdb",
+    "dlt",
+    "streamlit",
+    "fastapi",
+    "uvicorn",
+    "pandas",
+    "pyarrow",
+    "gdal",
+    "dbt-core"   # <- Lägg till dbt här så installeras den via uv
+]
+
+# Valfritt: ange CLI entry point
+[project.scripts]
+serve = "server:main"
+
+# Utvecklingsberoenden
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+    "black",
+    "mypy",
+    "ipython",
+    "httpx",
+    "pytest-asyncio"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.black]
+line-length = 88
+target-version = ["py313"]
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "I", "B", "UP"]
+exclude = ["venv", ".venv", "build", "dist"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -q"
+
+[tool.mypy]
+python_version = "3.13"
+ignore_missing_imports = true
+strict_optional = true
