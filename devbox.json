@@ -5,7 +5,8 @@
     "gdal",
     "duckdb",
     "git",
-    "gnumake"
+    "gnumake",
+    "dbeaver@latest"
   ],
   "shell": {
     "init_hook": [
@@ -15,7 +16,7 @@
       "uv sync --dev"
     ],
     "env": {
-      "PYTHONPATH": ".",
+      "PYTHONPATH":      ".",
       "UV_PIP_RESOLVER": "modern"
     }
   },
