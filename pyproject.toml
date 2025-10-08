@@ -15,8 +15,11 @@ dependencies = [
     "uvicorn",
     "pandas",
     "pyarrow",
-    "gdal",
-    "dbt-core"   # <- Lägg till dbt här så installeras den via uv
+    "gdal", # <- Lägg till dbt här så installeras den via uv
+    "dbt-core",
+    "python-dotenv>=1.1.1",
+    "oracledb>=3.4.0",
+    "cx-oracle>=8.3.0",
 ]
 
 ### Valfritt: ange CLI entry point

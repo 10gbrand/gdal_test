@@ -143,6 +143,68 @@
         }
       }
     },
+    "go-task@latest": {
+      "last_modified": "2025-09-18T16:33:27Z",
+      "resolved": "github:NixOS/nixpkgs/f4b140d5b253f5e2a1ff4e5506edbf8267724bde#go-task",
+      "source": "devbox-search",
+      "version": "3.44.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/p58fz5g7zai0bgh6rqyg9hfz0hmvng4m-go-task-3.44.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/p58fz5g7zai0bgh6rqyg9hfz0hmvng4m-go-task-3.44.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/qi3hx4hvcnzy317yihii2gm3gqgvvnw5-go-task-3.44.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/qi3hx4hvcnzy317yihii2gm3gqgvvnw5-go-task-3.44.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/n6xnr1iwm1yhcf6mji9l649djizbfg3b-go-task-3.44.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/n6xnr1iwm1yhcf6mji9l649djizbfg3b-go-task-3.44.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/jjy9p73v67b6p555qs9ff3dasnlzafid-go-task-3.44.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/jjy9p73v67b6p555qs9ff3dasnlzafid-go-task-3.44.1"
+        }
+      }
+    },
+    "libaio": {
+      "resolved": "github:NixOS/nixpkgs/bce5fe2bb998488d8e7e7856315f90496723793c?narHash=sha256-vwXL9H5zDHEQA0oFpww2one0%2FhkwnPAjc47LRph6d0I%3D#libaio",
+      "source": "nixpkg",
+      "systems": {
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "path": "/nix/store/dzlnx399b7cvsy160328m62zfrxj4srg-libaio-0.3.113",
+              "default": true
+            }
+          ]
+        }
+      }
+    },
     "python@3.13": {
       "last_modified": "2025-05-16T20:19:48Z",
       "plugin_version": "0.0.4",
@@ -197,6 +259,68 @@
             }
           ],
           "store_path": "/nix/store/2mab9iiwhcqwk75qwvp3zv0bvbiaq6cs-python3-3.13.3"
+        }
+      }
+    },
+    "tree@latest": {
+      "last_modified": "2025-09-18T16:33:27Z",
+      "resolved": "github:NixOS/nixpkgs/f4b140d5b253f5e2a1ff4e5506edbf8267724bde#tree",
+      "source": "devbox-search",
+      "version": "2.2.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/6aw6nx85n7nangqdhrf9m40rh3s3ag75-tree-2.2.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/6aw6nx85n7nangqdhrf9m40rh3s3ag75-tree-2.2.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/parh7wnhb5w19l79sp13nnq7l1vxacmw-tree-2.2.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/parh7wnhb5w19l79sp13nnq7l1vxacmw-tree-2.2.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/6iv68lx6pm6smgv9pimqjrrv9di630j0-tree-2.2.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/6iv68lx6pm6smgv9pimqjrrv9di630j0-tree-2.2.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/5d30cdk68blbj2ya33kzxfp8gs0czd88-tree-2.2.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/5d30cdk68blbj2ya33kzxfp8gs0czd88-tree-2.2.1"
+        }
+      }
+    },
+    "unzip": {
+      "resolved": "github:NixOS/nixpkgs/bce5fe2bb998488d8e7e7856315f90496723793c?narHash=sha256-vwXL9H5zDHEQA0oFpww2one0%2FhkwnPAjc47LRph6d0I%3D#unzip",
+      "source": "nixpkg",
+      "systems": {
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "path": "/nix/store/5skqhdiihrv2fg6vda3ld809ycsn35p0-unzip-6.0",
+              "default": true
+            }
+          ]
         }
       }
     },

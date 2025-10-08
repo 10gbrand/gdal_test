@@ -4,37 +4,26 @@ vars:
   MOUNT_PATH: "/Users/mattiastengbrand/Library/Mobile Documents/com~apple~CloudDocs/Spring/uppland 2/files"
 
 tasks:
-  init:
-    desc: "Initiera Devbox-projektet"
+  _install-oracle-instantclient:
+    desc: "install oracle-instantclient"
+    dir: "~/.devbox"
     cmds:
-      - echo "🔧 Initierar Devbox..."
-      - devbox init
+      - mkdir -p oracle_instantclient
+      - cd oracle_instantclient
+    #  - curl -O https://download.oracle.com/otn_software/linux/instantclient/instantclient-basiclite-linux.x64-21.9.0.0.0dbru.zip
+      - unzip -o instantclient-basiclite-linux.x64-21.9.0.0.0dbru.zip
 
-  shell:
-    desc: "Starta Devbox-shell med standardinställningar"
-    cmds:
-      - echo "🚀 Startar Devbox shell..."
-      - devbox shell
 
-  verify:
-    desc: "Verifiera Python, uv, DuckDB, DBT och GDAL"
+  install-oracle-instantclient:
+    desc: "install oracle-instantclient"
+    dir: "~/.devbox"
     cmds:
-      - echo "🔍 Verifierar installationer..."
-      - python --version
-      - uv --version
-      - duckdb --version
-      - dbt --version
-      - gdalinfo --version
+      - mkdir -p oracle_instantclient
+      - cd oracle_instantclient
+      - cp instantclient-basic-linux.x64-19.28.0.0.0dbru.zip .
+      - unzip -o instantclient-basic-linux.x64-19.28.0.0.0dbru.zip
 
-  shell:mount:
-    desc: "Starta Devbox-shell med /data mountad från iCloud"
-    cmds:
-      - echo "🗂  Startar Devbox med mount till {{.MOUNT_PATH}}"
-      - devbox shell --mount "{{.MOUNT_PATH}}:/data"
 
-  setup:
-    desc: "Kör hela initieringsflödet: init + shell + verify"
-    cmds:
-      - task: init
-      - task: shell
-      - task: verify
+
+
+      
