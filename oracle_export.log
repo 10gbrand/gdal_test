@@ -1,0 +1,47 @@
+2025-10-09 09:13:20,133 - INFO - Startar export av tabell: MVIEW_FRGU_NATURA2000
+2025-10-09 09:14:22,104 - INFO - Startar export av tabell: MVIEW_FRGU_NATURA2000
+2025-10-09 09:14:52,887 - INFO - Export av tabell MVIEW_FRGU_NATURA2000 lyckades med 1283 rader.
+2025-10-09 09:15:13,072 - INFO - Avslutar export av tabell: MVIEW_FRGU_NATURA2000
+2025-10-09 09:15:13,072 - INFO - Startar export av tabell: MVIEW_FRGU_NVAVTAL
+2025-10-09 09:15:31,608 - INFO - Export av tabell MVIEW_FRGU_NVAVTAL lyckades med 360 rader.
+2025-10-09 09:15:35,541 - INFO - Avslutar export av tabell: MVIEW_FRGU_NVAVTAL
+2025-10-09 09:15:35,541 - INFO - Startar export av tabell: TATGTSLINR
+2025-10-09 09:15:36,265 - INFO - Export av tabell TATGTSLINR lyckades med 0 rader.
+2025-10-09 09:15:36,397 - INFO - Avslutar export av tabell: TATGTSLINR
+2025-10-09 09:15:36,397 - INFO - Startar export av tabell: TAVPROVYTA
+2025-10-09 09:15:36,947 - INFO - Export av tabell TAVPROVYTA lyckades med 0 rader.
+2025-10-09 09:15:37,057 - INFO - Avslutar export av tabell: TAVPROVYTA
+2025-10-09 09:15:37,057 - INFO - Startar export av tabell: TAVPROVYTATRAD
+2025-10-09 09:15:37,251 - INFO - Export av tabell TAVPROVYTATRAD lyckades med 0 rader.
+2025-10-09 09:15:37,353 - INFO - Avslutar export av tabell: TAVPROVYTATRAD
+2025-10-09 09:15:37,354 - INFO - Startar export av tabell: TCHECKSUMMA
+2025-10-09 09:15:37,773 - INFO - Export av tabell TCHECKSUMMA lyckades med 0 rader.
+2025-10-09 09:15:37,896 - INFO - Avslutar export av tabell: TCHECKSUMMA
+2025-10-09 09:15:37,896 - INFO - Startar export av tabell: THANSBEST
+2025-10-09 09:15:38,304 - INFO - Export av tabell THANSBEST lyckades med 0 rader.
+2025-10-09 09:15:38,459 - INFO - Avslutar export av tabell: THANSBEST
+2025-10-09 09:15:38,459 - INFO - Startar export av tabell: TJAMKN
+2025-10-09 09:15:38,634 - INFO - Export av tabell TJAMKN lyckades med 0 rader.
+2025-10-09 09:15:38,759 - INFO - Avslutar export av tabell: TJAMKN
+2025-10-09 09:15:38,759 - INFO - Startar export av tabell: TORPHANATGS
+2025-10-09 09:15:39,048 - INFO - Export av tabell TORPHANATGS lyckades med 0 rader.
+2025-10-09 09:15:39,158 - INFO - Avslutar export av tabell: TORPHANATGS
+2025-10-09 09:15:39,158 - INFO - Startar export av tabell: TSKIFTEEDITERING
+2025-10-09 09:15:39,559 - INFO - Export av tabell TSKIFTEEDITERING lyckades med 0 rader.
+2025-10-09 09:15:39,695 - INFO - Avslutar export av tabell: TSKIFTEEDITERING
+2025-10-09 09:15:39,695 - INFO - Startar export av tabell: SDE_LOGFILES
+2025-10-09 09:15:40,196 - INFO - Export av tabell SDE_LOGFILES lyckades med 0 rader.
+2025-10-09 09:15:40,314 - INFO - Avslutar export av tabell: SDE_LOGFILES
+2025-10-09 09:15:40,314 - INFO - Startar export av tabell: SDE_LOGFILE_DATA
+2025-10-09 09:15:40,508 - INFO - Export av tabell SDE_LOGFILE_DATA lyckades med 0 rader.
+2025-10-09 09:15:40,646 - INFO - Avslutar export av tabell: SDE_LOGFILE_DATA
+2025-10-09 09:15:40,646 - INFO - Startar export av tabell: SDE_UUID_TEMP$
+2025-10-09 09:15:40,861 - INFO - Export av tabell SDE_UUID_TEMP$ lyckades med 0 rader.
+2025-10-09 09:15:40,963 - INFO - Avslutar export av tabell: SDE_UUID_TEMP$
+2025-10-09 09:15:40,963 - INFO - Startar export av tabell: GAFO
+2025-10-09 09:15:46,125 - INFO - Export av tabell GAFO lyckades med 129 rader.
+2025-10-09 09:15:47,343 - INFO - Avslutar export av tabell: GAFO
+2025-10-09 09:15:47,343 - INFO - Startar export av tabell: GAJO
+2025-10-09 09:17:50,890 - INFO - Export av tabell GAJO lyckades med 2932 rader.
+2025-10-09 09:20:54,380 - INFO - Avslutar export av tabell: GAJO
+2025-10-09 09:20:54,380 - INFO - Startar export av tabell: GALINJER

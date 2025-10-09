@@ -3,6 +3,22 @@ import cx_Oracle
 import pandas as pd
 import os
 from dotenv import load_dotenv
+import logging
+from datetime import datetime
+
+
+
+
+# Konfigurera loggning
+logging.basicConfig(
+    filename="oracle_export.log",
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
+
+def print_with_time(message):
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"[{timestamp}] {message}")
 
 lib_dir = "/home/mate01/github/10gbrand/gdal_test/instantclient/instantclient_19_28"
 os.environ["LD_LIBRARY_PATH"] = lib_dir + ":" + os.environ.get("LD_LIBRARY_PATH", "")
@@ -68,19 +84,29 @@ pipeline = dlt.pipeline(
 def oracle_giss_tables():
     tables = get_table_names(connection)
     for table in tables:
-        print(f'Start export: {table}')
-        geom_cols = get_geometry_columns(connection, table)
-        sql = build_select_with_wkt(table, geom_cols, connection)
-        df = pd.read_sql(sql, con=connection)
-        
-        # Konvertera LOB-kolumner till strängar för JSON-serialisering
-        df = convert_lob_columns(df)
+        logging.info(f"Startar export av tabell: {table}")
+        print_with_time(f"Start export: {table}")
+        try:
+            geom_cols = get_geometry_columns(connection, table)
+            sql = build_select_with_wkt(table, geom_cols, connection)
+            df = pd.read_sql(sql, con=connection)
 
-        yield {
-            "table_name": table.lower(),
-            "data": df.to_dict(orient="records"),
-        }
-        print(f'End export: {table}')
+            df = convert_lob_columns(df)
+
+            logging.info(f"Export av tabell {table} lyckades med {len(df)} rader.")
+            print_with_time(f"{len(df)} rader exporterade från tabell: {table}")
+
+            yield {
+                "table_name": table.lower(),
+                "data": df.to_dict(orient="records"),
+            }
+
+        except Exception as e:
+            logging.error(f"Fel vid export av tabell {table}: {e}")
+            print_with_time(f"⚠️  Fel vid export av tabell {table}: {e}")
+
+        print_with_time(f"End export: {table}")
+        logging.info(f"Avslutar export av tabell: {table}")
 
 for table_info in oracle_giss_tables():
     pipeline.run(table_info["data"], table_name=table_info["table_name"])
