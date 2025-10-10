@@ -9,7 +9,7 @@ requires-python = ">=3.13"
 # Produktionsberoenden
 dependencies = [
     "duckdb",
-    "dlt",
+    "dlt[parquet]==1.17.0",   # ✅ Lås till version som har Parquet-stöd
     "streamlit",
     "fastapi",
     "uvicorn",
@@ -19,7 +19,7 @@ dependencies = [
     "dbt-core",
     "python-dotenv>=1.1.1",
     "oracledb>=3.4.0",
-    "cx-oracle>=8.3.0",
+#    "cx-oracle>=8.3.0",
     "sqlalchemy"
 ]
 

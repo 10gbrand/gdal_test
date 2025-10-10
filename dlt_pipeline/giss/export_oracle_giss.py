@@ -1,13 +1,11 @@
 import dlt
-import cx_Oracle
 import pandas as pd
 import os
 from dotenv import load_dotenv
 import logging
 from datetime import datetime
-
-
-
+from sqlalchemy import create_engine
+import cx_Oracle  # används fortfarande för LOB-hantering
 
 # Konfigurera loggning
 logging.basicConfig(
@@ -20,9 +18,9 @@ def print_with_time(message):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print(f"[{timestamp}] {message}")
 
+# Initiera Oracle Instant Client via LD_LIBRARY_PATH (om behövs)
 lib_dir = "/home/mate01/github/10gbrand/gdal_test/instantclient/instantclient_19_28"
 os.environ["LD_LIBRARY_PATH"] = lib_dir + ":" + os.environ.get("LD_LIBRARY_PATH", "")
-cx_Oracle.init_oracle_client(lib_dir=lib_dir)
 
 load_dotenv()  # Läser in .env-filen
 
@@ -32,15 +30,17 @@ service_name = os.getenv("SERVICE_NAME")
 username = os.getenv("USERNAME")
 password = os.getenv("PASSWORD")
 
-dsn = cx_Oracle.makedsn(host, port, service_name=service_name)
-connection = cx_Oracle.connect(user=username, password=password, dsn=dsn)
+# Bygg SQLAlchemy engine-string för cx_Oracle
+oracle_connection_string = (
+    f"oracle+cx_oracle://{username}:{password}@{host}:{port}/?service_name={service_name}"
+)
+engine = create_engine(oracle_connection_string)
 
 def get_table_names(conn):
     query = "SELECT table_name FROM all_tables WHERE owner = 'GISS'"
     return pd.read_sql(query, con=conn)["TABLE_NAME"].tolist()
 
 def get_geometry_columns(conn, table):
-    # Hämta kolumnnamn för SDO_GEOMETRY i tabellen
     query = f"""
         SELECT column_name FROM all_tab_columns
         WHERE owner = 'GISS' AND table_name = '{table}'
@@ -55,7 +55,6 @@ def convert_lob_columns(df):
     return df
 
 def build_select_with_wkt(table, geom_cols, conn):
-    # Hämta alla kolumner i tabellen
     query_cols = f"""
         SELECT column_name FROM all_tab_columns
         WHERE owner = 'GISS' AND table_name = '{table}'
@@ -65,7 +64,6 @@ def build_select_with_wkt(table, geom_cols, conn):
     select_cols = []
     for col in all_cols:
         if col in geom_cols:
-            # Konvertera SDO_GEOMETRY till WKT
             select_cols.append(f"SDO_UTIL.TO_WKTGEOMETRY({col}) AS {col}_wkt")
         else:
             select_cols.append(col)
@@ -82,14 +80,14 @@ pipeline = dlt.pipeline(
 )
 
 def oracle_giss_tables():
-    tables = get_table_names(connection)
+    tables = get_table_names(engine)
     for table in tables:
         logging.info(f"Startar export av tabell: {table}")
         print_with_time(f"Start export: {table}")
         try:
-            geom_cols = get_geometry_columns(connection, table)
-            sql = build_select_with_wkt(table, geom_cols, connection)
-            df = pd.read_sql(sql, con=connection)
+            geom_cols = get_geometry_columns(engine, table)
+            sql = build_select_with_wkt(table, geom_cols, engine)
+            df = pd.read_sql(sql, con=engine)
 
             df = convert_lob_columns(df)
 

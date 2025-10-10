@@ -15,27 +15,29 @@
 "shell": {
   "init_hook": [
     "echo '🚀 Initializing Python environment via uv and pyproject.toml...'",
-
-    "# Skapa virtualenv om det inte finns",
+    
     "if [ ! -d .venv ]; then uv venv .venv --python 3.13; fi",
     "source .venv/bin/activate",
-
-    "# Synka beroenden",
+    
     "uv sync --dev",
-
-    "# Extrahera Oracle Instant Client om inte redan gjord",
+    
     "if [ ! -d instantclient/instantclient_19_28 ]; then",
     "  echo '📦 Extracting Oracle Instant Client...';",
     "  mkdir -p instantclient && unzip -q instantclient-basic-linux.x64-19.28.0.0.0dbru.zip -d instantclient;",
     "fi",
-
-    "cp $(nix eval --raw nixpkgs#libaio.outPath)/lib/libaio.so.1 ./instantclient/instantclient_19_28/ || true",
-
-    "# Exportera miljövariabler",
+    
+    "LIBAIO_PATH=$(nix eval --raw nixpkgs#libaio.outPath)/lib/libaio.so.1",
+    "mkdir -p ./instantclient/instantclient_19_28",
+    "if [ ! -L ./instantclient/instantclient_19_28/libaio.so.1 ]; then",
+    "  echo '🔗 Linking libaio.so.1 from nix store...';",
+    "  ln -sf $LIBAIO_PATH ./instantclient/instantclient_19_28/libaio.so.1;",
+    "fi",
+    
     "export LD_LIBRARY_PATH=$PWD/instantclient/instantclient_19_28:$LD_LIBRARY_PATH",
     "export ORACLE_HOME=$PWD/instantclient/instantclient_19_28",
     "export PATH=$ORACLE_HOME:$PATH"
   ],
+
   "env": {
     "PYTHONPATH": ".",
     "UV_PIP_RESOLVER": "modern",

@@ -4,3 +4,5 @@
 *.zip
 instantclient
 dlt_pipeline/giss/.env
+/data/*
+dlt2/.dlt/secrets.toml
