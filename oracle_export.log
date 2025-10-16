@@ -3293,3 +3293,278 @@ ORA-06512: at "MDSYS.SDO_UTIL", line 959
 2025-10-09 17:49:14,814 - INFO - Start export: T_1_DIRTYAREAS
 2025-10-09 17:49:15,967 - INFO - Export av T_1_DIRTYAREAS lyckades (0 rader).
 2025-10-09 17:55:51,199 - INFO - Export av TDOK lyckades (43765 rader).
+2025-10-12 09:11:46,126 - INFO - Start export: MVIEW_FRGU_NATURA2000
+2025-10-12 09:11:46,127 - INFO - Start export: GFORNPKT_V2
+2025-10-12 09:11:46,127 - INFO - Start export: TSKIFTEEDITERING
+2025-10-12 09:11:46,127 - INFO - Start export: GAVD
+2025-10-12 09:11:46,926 - ERROR - Fel vid export av GAVD: (cx_Oracle.DatabaseError) ORA-03106: fatal two-task communication protocol error
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-10-12 09:11:46,927 - INFO - Start export: GDRIVNPKT
+2025-10-12 09:13:18,265 - ERROR - Fel vid export av GDRIVNPKT: [Errno 5] Input/output error
+2025-10-12 09:13:18,395 - ERROR - Fel vid export av GMO: [Errno 5] Input/output error
+2025-10-12 09:13:18,396 - ERROR - Fel vid export av GPR: [Errno 5] Input/output error
+2025-10-12 09:13:18,397 - ERROR - Fel vid export av GSALJOBJOLD: [Errno 5] Input/output error
+2025-10-12 09:13:18,398 - ERROR - Fel vid export av GUATGMB: [Errno 5] Input/output error
+2025-10-12 09:13:18,399 - ERROR - Fel vid export av TAKTORER: [Errno 5] Input/output error
+2025-10-12 09:13:18,400 - ERROR - Fel vid export av TATGOBJ: [Errno 5] Input/output error
+2025-10-12 09:13:18,401 - ERROR - Fel vid export av TAVARTER: [Errno 5] Input/output error
+2025-10-12 09:13:18,402 - ERROR - Fel vid export av TAVTRAD: [Errno 5] Input/output error
+2025-10-12 09:13:18,403 - ERROR - Fel vid export av TDOKKOPL: [Errno 5] Input/output error
+2025-10-12 09:13:18,403 - ERROR - Fel vid export av TNE_REFNODE: [Errno 5] Input/output error
+2025-10-12 09:13:18,404 - ERROR - Fel vid export av T_1_LINEERRORS: [Errno 5] Input/output error
+2025-10-12 09:42:46,418 - INFO - Start export: GAVD
+2025-10-12 09:42:46,418 - INFO - Start export: GPATGAVV
+2025-10-12 09:42:46,574 - ERROR - Fel vid export av GPATGAVV: (cx_Oracle.DatabaseError) ORA-01002: fetch out of sequence
+[SQL: 
+        SELECT column_name FROM all_tab_columns
+        WHERE owner = 'GISS' AND table_name = 'GPATGAVV'
+        AND data_type = 'SDO_GEOMETRY'
+    ]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-10-12 09:42:46,745 - ERROR - Fel vid export av GAVD: (cx_Oracle.DatabaseError) ORA-03106: fatal two-task communication protocol error
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-10-12 09:44:21,029 - INFO - Start export: GAVD
+2025-10-12 09:44:21,030 - INFO - Start export: GPATGAVV
+2025-10-12 09:44:35,481 - INFO - Export av GPATGAVV lyckades (20291 rader).
+2025-10-12 09:45:47,593 - ERROR - Fel vid export av GAVD: (cx_Oracle.DatabaseError) ORA-22063: reading negative value [-0.00000000000000000000000000000000E+125
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-10-12 10:21:39,795 - INFO - Start export: GAVD
+2025-10-12 10:21:39,796 - INFO - Start export: GPATGAVV
+2025-10-12 10:21:54,121 - INFO - Export av GPATGAVV lyckades (20291 rader).
+2025-10-12 10:23:06,146 - ERROR - Fel vid export av GAVD: (cx_Oracle.DatabaseError) ORA-22063: reading negative value [-0.00000000000000000000000000000000E+125
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-10-12 10:30:10,336 - INFO - Start export: GAVD
+2025-10-12 10:31:25,321 - ERROR - Fel vid export av GAVD: (cx_Oracle.DatabaseError) ORA-22063: reading negative value [-0.00000000000000000000000000000000E+125
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-10-12 10:34:29,996 - INFO - Start export: GAVD
+2025-10-12 10:35:44,447 - ERROR - Fel vid export av GAVD: (cx_Oracle.DatabaseError) ORA-22063: reading negative value [-0.00000000000000000000000000000000E+125
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-10-12 10:40:21,110 - INFO - Start export: GAVD
+2025-10-12 10:41:35,829 - ERROR - Fel vid export av GAVD: (cx_Oracle.DatabaseError) ORA-22063: reading negative value [-0.00000000000000000000000000000000E+125
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-10-12 10:45:00,587 - INFO - Start export: GAVD
+2025-10-12 10:46:15,726 - ERROR - Fel vid export av GAVD: (cx_Oracle.DatabaseError) ORA-22063: reading negative value [-0.00000000000000000000000000000000E+125
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-10-12 10:51:46,482 - INFO - Start export: GAVD
+2025-10-12 10:53:00,769 - ERROR - Fel vid export av GAVD: (cx_Oracle.DatabaseError) ORA-22063: reading negative value [-0.00000000000000000000000000000000E+125
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-10-12 11:13:35,994 - INFO - Start export: GAVD
+2025-10-12 11:14:50,453 - ERROR - Fel vid export av GAVD: (cx_Oracle.DatabaseError) ORA-22063: reading negative value [-0.00000000000000000000000000000000E+125
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-10-12 11:17:09,928 - INFO - Start export: GELP
+2025-10-12 11:17:09,931 - INFO - Start export: TATGTSLINR
+2025-10-12 11:17:09,931 - INFO - Start export: GAFO
+2025-10-12 11:17:09,931 - INFO - Start export: GHANSLIN
+2025-10-12 11:17:10,510 - INFO - Export av TATGTSLINR lyckades (0 rader).
+2025-10-12 11:17:10,630 - INFO - Export av GAFO lyckades (129 rader).
+2025-10-12 11:17:10,781 - INFO - Start export: TAVPROVYTA
+2025-10-12 11:17:10,782 - INFO - Start export: GAJO
+2025-10-12 11:17:11,252 - INFO - Export av TAVPROVYTA lyckades (0 rader).
+2025-10-12 11:17:11,254 - INFO - Export av GELP lyckades (226 rader).
+2025-10-12 11:17:11,256 - INFO - Start export: TAVPROVYTATRAD
+2025-10-12 11:17:11,309 - INFO - Start export: GFASTIGHETAFFAR
+2025-10-12 11:17:11,729 - INFO - Export av TAVPROVYTATRAD lyckades (0 rader).
+2025-10-12 11:17:11,733 - INFO - Start export: TCHECKSUMMA
+2025-10-12 11:17:12,217 - INFO - Export av TCHECKSUMMA lyckades (0 rader).
+2025-10-12 11:17:12,224 - INFO - Start export: THANSBEST
+2025-10-12 11:17:12,898 - INFO - Export av THANSBEST lyckades (0 rader).
+2025-10-12 11:17:12,903 - INFO - Start export: TJAMKN
+2025-10-12 11:17:13,571 - INFO - Export av TJAMKN lyckades (0 rader).
+2025-10-12 11:17:13,574 - INFO - Start export: TSKIFTEEDITERING
+2025-10-12 11:17:14,182 - INFO - Export av TSKIFTEEDITERING lyckades (0 rader).
+2025-10-12 11:17:14,186 - INFO - Start export: GPATGMB
+2025-10-12 11:17:17,089 - INFO - Export av GFASTIGHETAFFAR lyckades (7444 rader).
+2025-10-12 11:17:17,277 - INFO - Start export: GFORNLIN
+2025-10-12 11:17:24,832 - INFO - Export av GHANSLIN lyckades (25600 rader).
+2025-10-12 11:17:25,047 - INFO - Start export: GHANSPKT
+2025-10-12 11:17:26,821 - INFO - Export av GPATGMB lyckades (11322 rader).
+2025-10-12 11:17:27,204 - INFO - Start export: GPATGOVR
+2025-10-12 11:17:28,228 - INFO - Export av GPATGOVR lyckades (345 rader).
+2025-10-12 11:17:28,253 - INFO - Start export: GPATGPRODH
+2025-10-12 11:17:28,878 - ERROR - Fel vid export av GPATGPRODH: (cx_Oracle.DatabaseError) ORA-13199: multipolygon: invalid interpretation found
+ORA-06512: at "MDSYS.SDO_UTIL", line 917
+ORA-06512: at "MDSYS.SDO_UTIL", line 961
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-10-12 11:17:28,879 - INFO - Start export: GPATGROJ
+2025-10-12 11:17:42,656 - INFO - Export av GPATGROJ lyckades (12614 rader).
+2025-10-12 11:17:43,066 - INFO - Start export: GPO
+2025-10-12 11:17:44,778 - INFO - Export av GPO lyckades (109 rader).
+2025-10-12 11:17:44,854 - INFO - Start export: GPR
+2025-10-12 11:17:46,191 - INFO - Export av GPR lyckades (23 rader).
+2025-10-12 11:17:46,229 - INFO - Start export: GPRIOAVV
+2025-10-12 11:18:02,007 - INFO - Export av GAJO lyckades (2932 rader).
+2025-10-12 11:18:04,474 - INFO - Start export: GALINJER
+2025-10-12 11:18:06,595 - INFO - Export av GFORNLIN lyckades (80672 rader).
+2025-10-12 11:18:07,393 - INFO - Start export: GFORNPKT
+2025-10-12 11:18:43,921 - INFO - Export av GPRIOAVV lyckades (115990 rader).
+2025-10-12 11:18:45,452 - INFO - Start export: GRESNAT
+2025-10-12 11:19:16,744 - INFO - Export av GALINJER lyckades (217645 rader).
+2025-10-12 11:19:17,795 - INFO - Start export: GAPUNKTER
+2025-10-12 11:20:24,267 - INFO - Export av GFORNPKT lyckades (526272 rader).
+2025-10-12 11:20:27,723 - INFO - Start export: GFORNYTA
+2025-10-12 11:20:53,574 - INFO - Export av GHANSPKT lyckades (645956 rader).
+2025-10-12 11:20:55,392 - INFO - Start export: GHANSYTA
+2025-10-12 11:21:06,539 - INFO - Export av GRESNAT lyckades (211833 rader).
+2025-10-12 11:21:10,788 - INFO - Start export: GRESNATPKT
+2025-10-12 11:21:37,649 - INFO - Export av GFORNYTA lyckades (223568 rader).
+2025-10-12 11:21:39,961 - INFO - Start export: GFORSOKPKT
+2025-10-12 11:21:40,512 - INFO - Export av GFORSOKPKT lyckades (196 rader).
+2025-10-12 11:21:40,522 - INFO - Start export: GFORSOKYTA
+2025-10-12 11:21:41,429 - INFO - Export av GFORSOKYTA lyckades (793 rader).
+2025-10-12 11:21:41,457 - INFO - Start export: GSALJOBJOLD
+2025-10-12 11:21:44,385 - INFO - Export av GSALJOBJOLD lyckades (4142 rader).
+2025-10-12 11:21:44,574 - INFO - Start export: GSKIFTE
+2025-10-12 11:21:54,815 - INFO - Export av GSKIFTE lyckades (3311 rader).
+2025-10-12 11:21:55,434 - INFO - Start export: GSKOGHISTLIN
+2025-10-12 11:21:57,509 - INFO - Export av GSKOGHISTLIN lyckades (5432 rader).
+2025-10-12 11:21:57,569 - INFO - Start export: GSKOGHISTPKT
+2025-10-12 11:22:05,619 - INFO - Export av GAPUNKTER lyckades (549626 rader).
+2025-10-12 11:22:06,858 - INFO - Start export: GATEXT
+2025-10-12 11:22:07,904 - INFO - Export av GATEXT lyckades (1805 rader).
+2025-10-12 11:22:07,941 - INFO - Start export: GAVD
+2025-10-12 11:22:15,776 - INFO - Export av GSKOGHISTPKT lyckades (67966 rader).
+2025-10-12 11:22:16,213 - INFO - Start export: GSKOGHISTYTA
+2025-10-12 11:22:25,505 - INFO - Export av GSKOGHISTYTA lyckades (24591 rader).
+2025-10-12 11:22:25,771 - INFO - Start export: GSO
+2025-10-12 11:22:26,694 - INFO - Export av GSO lyckades (11 rader).
+2025-10-12 11:22:26,734 - INFO - Start export: GUATGAVV
+2025-10-12 11:22:27,522 - ERROR - Fel vid export av GUATGAVV: (cx_Oracle.DatabaseError) ORA-22063: reading negative value [-0.00000000000000000000000000000000E+125
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-10-12 11:22:27,525 - INFO - Start export: GUATGFOR
+2025-10-12 11:22:28,130 - ERROR - Fel vid export av GUATGFOR: (cx_Oracle.DatabaseError) ORA-22063: reading negative value [-0.00000000000000000000000000000000E+125
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-10-12 11:22:28,132 - INFO - Start export: GUATGINV
+2025-10-12 11:22:28,949 - ERROR - Fel vid export av GUATGINV: (cx_Oracle.DatabaseError) ORA-13199: multipolygon: invalid interpretation found
+ORA-06512: at "MDSYS.SDO_UTIL", line 917
+ORA-06512: at "MDSYS.SDO_UTIL", line 961
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-10-12 11:22:28,951 - INFO - Start export: GUATGMB
+2025-10-12 11:22:29,871 - ERROR - Fel vid export av GUATGMB: (cx_Oracle.DatabaseError) ORA-13199: multipolygon: invalid interpretation found
+ORA-06512: at "MDSYS.SDO_UTIL", line 917
+ORA-06512: at "MDSYS.SDO_UTIL", line 961
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-10-12 11:22:29,873 - INFO - Start export: GUATGOVR
+2025-10-12 11:22:30,738 - ERROR - Fel vid export av GUATGOVR: (cx_Oracle.DatabaseError) ORA-13199: multipolygon: invalid interpretation found
+ORA-06512: at "MDSYS.SDO_UTIL", line 917
+ORA-06512: at "MDSYS.SDO_UTIL", line 961
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-10-12 11:22:30,740 - INFO - Start export: GUATGPRODH
+2025-10-12 11:22:31,720 - ERROR - Fel vid export av GUATGPRODH: (cx_Oracle.DatabaseError) ORA-13199: multipolygon: invalid interpretation found
+ORA-06512: at "MDSYS.SDO_UTIL", line 917
+ORA-06512: at "MDSYS.SDO_UTIL", line 961
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-10-12 11:22:31,721 - INFO - Start export: GUATGROJ
+2025-10-12 11:22:32,339 - ERROR - Fel vid export av GUATGROJ: (cx_Oracle.DatabaseError) ORA-22063: reading negative value [-0.00000000000000000000000000000000E+125
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-10-12 11:22:32,340 - INFO - Start export: GVAG
+2025-10-12 11:23:15,221 - INFO - Export av GVAG lyckades (113118 rader).
+2025-10-12 11:23:15,959 - INFO - Start export: GVO
+2025-10-12 11:23:17,059 - INFO - Export av GVO lyckades (43 rader).
+2025-10-12 11:23:17,115 - INFO - Start export: TAKTORER
+2025-10-12 11:23:18,203 - INFO - Export av TAKTORER lyckades (3679 rader).
+2025-10-12 11:23:18,260 - INFO - Start export: TAKTORSTYPER
+2025-10-12 11:23:19,220 - INFO - Export av TAKTORSTYPER lyckades (3908 rader).
+2025-10-12 11:23:19,231 - INFO - Start export: TARBORDER
+2025-10-12 11:23:19,544 - INFO - Export av GRESNATPKT lyckades (465188 rader).
+2025-10-12 11:23:21,754 - INFO - Start export: GRESNATSVEA
+2025-10-12 11:23:28,092 - INFO - Export av GRESNATSVEA lyckades (8436 rader).
+2025-10-12 11:23:28,260 - INFO - Start export: GRESTRLI
+2025-10-12 11:23:28,758 - INFO - Export av GRESTRLI lyckades (0 rader).
+2025-10-12 11:23:28,765 - INFO - Start export: GRESTRPKT
+2025-10-12 11:23:29,284 - INFO - Export av GRESTRPKT lyckades (0 rader).
+2025-10-12 11:23:29,291 - INFO - Start export: GRESTRYTA
+2025-10-12 11:23:29,561 - INFO - Export av TARBORDER lyckades (59577 rader).
+2025-10-12 11:23:29,762 - INFO - Start export: TATGAVV
+2025-10-12 11:23:30,499 - INFO - Export av GRESTRYTA lyckades (1320 rader).
+2025-10-12 11:23:30,527 - INFO - Start export: GRO
+2025-10-12 11:23:31,188 - INFO - Export av GRO lyckades (5 rader).
+2025-10-12 11:23:31,206 - INFO - Start export: TATGAVVTRAD
+2025-10-12 11:23:34,678 - ERROR - Fel vid export av GAVD: (cx_Oracle.DatabaseError) ORA-22063: reading negative value [-0.00000000000000000000000000000000E+125
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-10-12 11:23:34,680 - INFO - Start export: GDRIVNPKT
+2025-10-12 11:24:02,030 - INFO - Export av TATGAVV lyckades (233665 rader).
+2025-10-12 11:24:02,633 - INFO - Start export: TATGAVVANVISNING
+2025-10-12 11:24:03,229 - INFO - Export av TATGAVVANVISNING lyckades (630 rader).
+2025-10-12 11:24:03,238 - INFO - Start export: TATGAVVMATTILLF
+2025-10-12 11:24:09,536 - INFO - Export av GHANSYTA lyckades (464592 rader).
+2025-10-12 11:24:13,859 - INFO - Start export: GMO
+2025-10-12 11:24:14,431 - INFO - Export av GMO lyckades (2 rader).
+2025-10-12 11:24:14,442 - INFO - Start export: GPATGAVV
+2025-10-12 11:24:27,788 - INFO - Export av GPATGAVV lyckades (20291 rader).
+2025-10-12 11:24:28,472 - INFO - Start export: GPATGFOR
+2025-10-12 11:24:39,411 - INFO - Export av GPATGFOR lyckades (17687 rader).
+2025-10-12 11:24:40,012 - INFO - Start export: GPATGINV
+2025-10-12 11:25:06,385 - INFO - Export av GDRIVNPKT lyckades (314384 rader).
+2025-10-12 11:25:07,304 - INFO - Start export: TATGROJMATTILLF
+2025-10-12 11:25:36,115 - INFO - Export av GPATGINV lyckades (93531 rader).
+2025-10-12 11:25:38,732 - INFO - Start export: TAVBIOTOP
+2025-10-12 11:25:42,444 - INFO - Export av TAVBIOTOP lyckades (23488 rader).
+2025-10-12 11:25:42,497 - INFO - Start export: TAVNATURKORT
+2025-10-12 11:25:56,625 - INFO - Export av TATGROJMATTILLF lyckades (361290 rader).
+2025-10-12 11:25:57,294 - INFO - Start export: TATGROJTRAD
+2025-10-12 11:26:03,044 - INFO - Export av TATGAVVMATTILLF lyckades (845356 rader).
+2025-10-12 11:26:05,881 - INFO - Start export: TAVTRAD
+2025-10-12 11:26:38,397 - INFO - Export av TAVNATURKORT lyckades (422101 rader).
+2025-10-12 11:26:38,933 - INFO - Start export: TAVNATUROBJEKT
+2025-10-12 11:27:35,247 - INFO - Export av TAVNATUROBJEKT lyckades (423652 rader).
+2025-10-12 11:27:35,777 - INFO - Start export: TAVNYCKELELEMENT
+2025-10-12 11:27:42,354 - INFO - Export av TAVNYCKELELEMENT lyckades (47200 rader).
+2025-10-12 11:27:42,423 - INFO - Start export: TAVSI
+2025-10-12 11:27:48,737 - INFO - Export av TATGAVVTRAD lyckades (1883155 rader).
+2025-10-12 11:27:52,839 - INFO - Start export: TATGMB
+2025-10-12 11:27:57,550 - INFO - Export av TATGROJTRAD lyckades (914221 rader).
+2025-10-12 11:27:58,521 - INFO - Start export: TATGSADD
+2025-10-12 11:28:00,653 - INFO - Export av TATGSADD lyckades (11935 rader).
+2025-10-12 11:28:00,697 - INFO - Start export: TATGSPECSORT
+2025-10-12 11:28:02,241 - INFO - Export av TATGSPECSORT lyckades (7107 rader).
+2025-10-12 11:28:02,262 - INFO - Start export: TATGTRADGRUND
+2025-10-12 11:28:05,907 - INFO - Export av TATGMB lyckades (92343 rader).
+2025-10-12 11:28:06,230 - INFO - Start export: TATGNF
+2025-10-12 11:28:08,522 - INFO - Export av TATGNF lyckades (13601 rader).
+2025-10-12 11:28:08,562 - INFO - Start export: TATGOBJ
+2025-10-12 11:28:16,838 - INFO - Export av TAVTRAD lyckades (934938 rader).
+2025-10-12 11:28:19,747 - INFO - Start export: TAVTRADFM
+2025-10-12 11:28:22,094 - INFO - Export av TATGOBJ lyckades (78703 rader).
+2025-10-12 11:28:22,817 - INFO - Start export: TATGOBJLOGG
+2025-10-12 11:28:37,043 - INFO - Export av TAVSI lyckades (408162 rader).
+2025-10-12 11:28:37,693 - INFO - Start export: TAVSKADA
+2025-10-12 11:28:44,119 - INFO - Export av TAVSKADA lyckades (41932 rader).
+2025-10-12 11:28:44,283 - INFO - Start export: TAVSTANDORT
+2025-10-12 11:29:07,197 - INFO - Export av TATGTRADGRUND lyckades (486744 rader).
+2025-10-12 11:29:07,849 - INFO - Start export: TAVARTER
+2025-10-12 11:29:11,900 - INFO - Export av TAVARTER lyckades (26818 rader).
+2025-10-12 11:29:11,977 - INFO - Start export: TAVBESTAND
+2025-10-12 11:29:45,845 - INFO - Export av TAVSTANDORT lyckades (404165 rader).
+2025-10-12 11:29:47,743 - INFO - Start export: TDISTANV
+2025-10-12 11:29:48,215 - INFO - Export av TDISTANV lyckades (2 rader).
+2025-10-12 11:29:48,220 - INFO - Start export: TDOK
+2025-10-12 11:32:38,478 - INFO - Export av TAVBESTAND lyckades (404355 rader).
+2025-10-12 11:32:41,771 - INFO - Start export: TSAMRAD
+2025-10-12 11:33:01,381 - INFO - Export av TSAMRAD lyckades (18678 rader).
+2025-10-12 11:33:01,497 - INFO - Start export: TSAMRADUTFALL
+2025-10-12 11:34:08,800 - INFO - Export av TAVTRADFM lyckades (934463 rader).
+2025-10-12 11:34:10,940 - INFO - Export av TSAMRADUTFALL lyckades (66843 rader).
+2025-10-12 11:34:11,051 - INFO - Start export: TAVTRADSKIKT
+2025-10-12 11:34:11,213 - INFO - Start export: TSAMRADVILLKOR
+2025-10-12 11:34:17,575 - INFO - Export av TSAMRADVILLKOR lyckades (6157 rader).
+2025-10-12 11:34:17,609 - INFO - Start export: TSKSANMALAN
+2025-10-12 11:36:11,872 - INFO - Export av TATGOBJLOGG lyckades (1026271 rader).
+2025-10-12 11:36:13,842 - INFO - Start export: TATGPLANT
+2025-10-12 11:38:34,263 - INFO - Export av TATGPLANT lyckades (109017 rader).
+2025-10-12 11:38:34,739 - INFO - Start export: TATGROJ
+2025-10-12 11:40:36,361 - INFO - Export av TSKSANMALAN lyckades (104507 rader).
+2025-10-12 11:40:40,641 - INFO - Start export: TUATGINVPL
+2025-10-12 11:40:51,960 - INFO - Export av TATGROJ lyckades (127599 rader).
+2025-10-12 11:41:25,565 - INFO - Export av TAVTRADSKIKT lyckades (400159 rader).
+2025-10-12 11:41:27,629 - INFO - Start export: TAVVILTSKADADATA
+2025-10-12 11:41:35,243 - INFO - Export av TAVVILTSKADADATA lyckades (19628 rader).
+2025-10-12 11:41:35,347 - INFO - Start export: TAVVILTSKADATRAD
+2025-10-12 11:42:07,502 - INFO - Export av TUATGINVPL lyckades (180821 rader).
+2025-10-12 11:42:07,869 - INFO - Start export: TVORDER
+2025-10-12 11:42:42,878 - INFO - Export av TVORDER lyckades (48630 rader).
+2025-10-12 11:42:55,777 - INFO - Export av TAVVILTSKADATRAD lyckades (132383 rader).
+2025-10-12 11:42:56,033 - INFO - Start export: TAVVOBJ
+2025-10-12 11:43:44,028 - INFO - Export av TAVVOBJ lyckades (74863 rader).
+2025-10-12 11:43:44,247 - INFO - Start export: TDBINFO
+2025-10-12 11:43:45,841 - INFO - Export av TDBINFO lyckades (4 rader).
+2025-10-12 12:13:23,226 - INFO - Export av TDOK lyckades (43765 rader).

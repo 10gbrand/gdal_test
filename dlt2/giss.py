@@ -1,27 +1,39 @@
 import os
 import oracledb
-import dlt
-from dlt.sources.sql_database import sql_database
 from dotenv import load_dotenv
+from dlt.sources.sql_database import sql_database
+import dlt
 
-# Viktigt! Aktivera thick mode före DLT körs
-oracledb.init_oracle_client(lib_dir="/home/mate01/github/10gbrand/gdal_test/instantclient/instantclient_19_28")
+# ----------------------------------------------------
+# 1. Initiera Oracle thick mode
+# ----------------------------------------------------
+oracledb.init_oracle_client(
+    lib_dir="/home/mate01/github/10gbrand/gdal_test/instantclient/instantclient_19_28"
+)
 
+# ----------------------------------------------------
+# 2. Ladda miljövariabler
+# ----------------------------------------------------
 load_dotenv()
-
 host = os.getenv("HOST")
 port = os.getenv("PORT")
 service_name = os.getenv("SERVICE_NAME")
 username = os.getenv("USERNAME")
 password = os.getenv("PASSWORD")
 
-# Bygg SQLAlchemy URL som DLT accepterar
-#connection_string = f"oracle+oracledb://{username}:{password}@?dsn=//{host}:{port}/{service_name}"
+# ----------------------------------------------------
+# 3. Definiera tabeller med SQL
+# ----------------------------------------------------
+tables_sql = {
+    "GAVD": "SELECT * FROM GISS.GAVD",
+    "GPATGAVV": "SELECT * FROM GISS.GPATGAVV"
+}
 
-tables = ["GISS.GAVD", "GISS.GPATGAVV"]
-
-def load_tables_giss(tables):
-    
+# ----------------------------------------------------
+# 4. Funktion för att ladda tabeller via DLT
+# ----------------------------------------------------
+def load_tables_giss(tables_sql):
+    # 4.1 Skapa SQL-databasekälla
     source = sql_database(
         credentials={
             "drivername": "oracle+oracledb",
@@ -29,20 +41,34 @@ def load_tables_giss(tables):
             "password": password,
             "host": host,
             "port": port,
-            "database": service_name  # för Oracle, service_name används ofta som database
+            "database": service_name
         }
-    ).with_resources(*tables)
+    )
 
+    # 4.2 Lägg till resurser med SQL direkt
+    resources = []
+    for name, sql in tables_sql.items():
+        # I dlt 1.17.0 skickar man en tuple (resursnamn, SQL)
+        resources.append((name, sql))
+
+    # Med .with_resources() kan vi skicka namnet + SQL
+    source = source.with_resources(*resources)
+
+    # 4.3 Skapa pipeline
     pipeline = dlt.pipeline(
         pipeline_name="oracle_to_duckdb_pipeline",
         destination="duckdb",
         dataset_name="oracle_to_duckdb_data"
     )
 
+    # 4.4 Kör pipeline och skriv ut resultat
     load_info = pipeline.run(source)
     print("✅ Pipeline körd!")
     print(load_info)
 
+# ----------------------------------------------------
+# 5. Huvudprogram
+# ----------------------------------------------------
 if __name__ == "__main__":
-    load_tables_giss(tables)
+    load_tables_giss(tables_sql)
 
